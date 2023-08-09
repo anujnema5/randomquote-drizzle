@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import getAllQuotes from '../../lib/getAllQuotes'
+import getRandomQuote from '../../lib/getRandomQuote'
+import Quote from '@/components/Quote';
 
 export default async function Home() {
-  return (
-    <div>Hello</div>
-  )
+  const randomQuote = await getRandomQuote();
+  return <Quote {...randomQuote} />
 }
